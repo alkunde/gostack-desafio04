@@ -54,23 +54,7 @@ nav > div i {
   margin-left: 8px;
 }
 
-li {
+.postlist {
   width: 700px;
-  padding: 20px;
-  background: #FFF;
-}
-
-li .author {
-  color: #4A4A4A;
-  font-size: 14px;
-}
-
-li .data {
-  color: #9A9A9A;
-  font-size: 11px;
-}
-
-li .content {
-  color: #3E3E3E;
-  font-size: 14px;
+  margin: 0 auto 20px;
 }
