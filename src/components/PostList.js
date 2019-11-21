@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Post from './Post';
+
 class PostList extends Component {
   state = {
     posts: [
@@ -18,7 +20,7 @@ class PostList extends Component {
               name: "Diego Fernandes",
               avatar: "https://api.adorable.io/avatars/100/diego@fernandes.png"
             },
-            content: "Conteúdo do comentário"
+            content: "A Rocketseat está sempre em busca de novos membros para o time, e geralmente ficamos de olho em quem se destaca no Bootcamp, inclusive 80% do nosso time de devs é composto por alunos do Bootcamp. Além disso, se você tem vontade de ensinar gravando vídeos e criando posts, pode me chamar no Discord! (Sério, me chamem mesmo, esse comentário é real)"
           }
         ]
       },
@@ -83,29 +85,12 @@ class PostList extends Component {
     return (
       <ul className="postlist">
         {this.state.posts.map(post => (
-          <div className="post" key={post.id}>
-            <div className="post-header">
-              <img src={post.author.avatar} />
-              <div className="details">
-                <span>{post.author.name}</span>
-                <span>{post.date}</span>
-              </div>
-            </div>
-            <div className="post-content">
-              <span>{post.content}</span>
-            </div>
-            <div className="divider" />
-            <ul className="comments">
-              {post.comments.map(comment => (
-                <div className="comment" key={comment.id}>
-                  <img src={comment.author.avatar} />
-                  <div className="content">
-                    <span><strong>{comment.author.name}</strong> {comment.content}</span>
-                  </div>
-                </div>
-              ))}
-            </ul>
-          </div>
+          <Post
+            author={post.author}
+            date={post.date}
+            content={post.content}
+            comments={post.comments}
+          />
         ))}
       </ul>
     );
